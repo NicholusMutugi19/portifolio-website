@@ -91,7 +91,7 @@
   }
   .mobile-nav.open { opacity: 1; }
   .mobile-nav a {
-    font-family: 'Fraunces', serif; font-size: clamp(2rem, 8vw, 3rem);
+    font-family: 'Fraunces', serif; font-size: clamp(1rem, 3vw, 1rem);
     font-weight: 700; color: var(--white); text-decoration: none;
     transition: color 0.2s; letter-spacing: -0.02em;
   }
@@ -123,12 +123,15 @@
 
   @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(200,240,96,0.4)} 50%{box-shadow:0 0 0 8px rgba(200,240,96,0)} }
 
-  h1 {
+  h1 .Nicholus{
     font-family: 'Fraunces', serif;
-    font-size: clamp(3rem, 5.5vw, 5rem);
-    font-weight: 700; line-height: 1.06; letter-spacing: -0.03em;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-weight: 400; line-height: 1; letter-spacing: -0.03em;
     color: var(--white); opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
   }
+
+
+
   h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
 
   .hero-sub {
@@ -245,7 +248,7 @@
     font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--accent); margin-bottom: 0.8rem;
   }
-  .section-label::before { content: '//'; color: var(--muted); margin-right: 0.2rem; }
+  .section-label::before { content: ' ||'; color: var(--muted); margin-right: 0.2rem; }
 
   h2 {
     font-family: 'Fraunces', serif;
@@ -518,11 +521,8 @@
 
   <div class="hero-left">
     <div class="eyebrow"><span class="ebdot"></span>Open to Opportunities</div>
-    <h1>Nicholus<br><em>Mutugi</em></h1>
-    <p class="hero-sub">
-      Software engineer building mobile apps, web platforms, and robust backend systems.
-      I turn complex problems into clean, scalable digital products.
-    </p>
+    <h1><em class="Nicholus">Nicholus</em><br><em class="Mutugi">Mutugi</em></h1>
+    <p class="hero-sub">Software engineer focused on full-stack development. I work across the stack to build clean, scalable mobile and web applications. I enjoy writing clean code, solving real problems, and turning complex ideas into reliable digital products. </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn-fill">View My Work &rarr;</a>
       <a href="#contact" class="btn-line">Get In Touch</a>
@@ -538,15 +538,7 @@
     <div class="dev-photo-wrap">
       <div class="avail-badge"><span class="avdot"></span>Available</div>
 
-      <!--
-        =====================================================
-        DEVELOPER PHOTO
-        Replace the src value with your own image file path.
-        Example: src="nicholus.jpg"  or  src="images/photo.png"
-        The image sits in this folder alongside index.html.
-        Portrait orientation works best (taller than wide).
-        =====================================================
-      -->
+     
       <img
         id="dev-photo"
         src="./IMG-20251030-WA0074.jpg"
@@ -608,13 +600,13 @@
         <div class="section-label">Meet the Developer</div>
         <h2>Engineer by craft,<br><em>builder</em> by instinct</h2>
         <p style="margin-top:1.2rem">
-          I'm <strong>Nicholus Mutugi</strong>, a software engineer from Meru, Kenya. I build things that work — mobile apps, responsive web platforms, and backend systems that hold up under pressure.
+          I'm <strong>Nicholus Mutugi</strong>, a software engineer from Meru, Kenya. I build mobile apps, web platforms, and backend systems designed for performance, scalability and stability.
         </p>
         <p>
           My work spans the full stack: clean frontend interfaces, well-structured <strong>relational and NoSQL databases</strong>, cloud deployments on Firebase and Supabase, and solid backend APIs. I also handle basic networking and touch on cybersecurity fundamentals.
         </p>
         <p>
-          I'm exploring <strong>machine learning</strong> — integrating intelligent features into practical, real-world applications. Good software starts with understanding the problem, and I take that seriously.
+          I'm exploring <strong>machine learning</strong> — integrating intelligent features into practical, real-world applications, adding smart functionality that makes software more capable.
         </p>
         <div class="trait-tags">
           <span class="ttag">Mobile Dev</span>
@@ -755,20 +747,36 @@
 
       <div class="proj-card reveal">
         <div class="proj-thumb p1">
-          <div class="thumb-text t1">SHOP</div>
+          <div class="thumb-text t1">PROP</div>
           <span class="proj-num">01</span>
         </div>
         <div class="proj-body">
-          <div class="proj-type">Web App &mdash; Full Stack</div>
-          <h3>E-Commerce Platform</h3>
-          <p>A full-featured online store with real-time inventory management, secure payments, and a MySQL-backed admin dashboard for products and orders.</p>
-          <div class="proj-stack">
-            <span class="ps">React</span><span class="ps">Node.js</span>
-            <span class="ps">MySQL</span><span class="ps">Stripe</span><span class="ps">JWT</span>
-          </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
-        </div>
+
+
+
+<div class="proj-type">Web App &mdash; Full Stack</div>
+<h3>Property Listing Portal</h3>
+
+<p>
+A property listing platform built for a client to showcase and sell land and houses online. 
+The system allows users to browse available properties, view detailed listings, and contact 
+the seller, while the admin can easily manage property listings through a MySQL-backed dashboard.
+</p>
+
+<div class="proj-stack">
+  <span class="ps">PHP</span>
+  <span class="ps">MySQL</span>
+  <span class="ps">HTML</span>
+  <span class="ps">CSS</span>
+  <span class="ps">JavaScript</span>
+</div>
+
+<a href="#" class="proj-link">View Project &rarr;</a>
+
+</div>
       </div>
+
+           
 
       <div class="proj-card reveal">
         <div class="proj-thumb p2">
@@ -776,56 +784,90 @@
           <span class="proj-num">02</span>
         </div>
         <div class="proj-body">
-          <div class="proj-type">Mobile App &mdash; Cross Platform</div>
+          <div class="proj-type">PWA &mdash; Cross Platform</div>
           <h3>Budget Tracker</h3>
-          <p>A personal finance app with real-time Firebase sync, push notifications, and offline-first storage — built for Android and iOS with React Native.</p>
+          <p> A progressive web app for tracking personal finances with real-time data updates, smart caching, and offline-first functionality, allowing users to manage expenses even with limited connectivity.</p>
           <div class="proj-stack">
-            <span class="ps">React Native</span><span class="ps">Firebase</span>
-            <span class="ps">Expo</span><span class="ps">AsyncStorage</span>
+            <span class="ps">Typesript</span><span class="ps">Javascript</span>
+            <span class="ps">PostgreSQL</span><span class="ps">Supabase</span>
+            <span class="ps">Redis</span> <span class="ps">Prisma Schema</span>
           </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
+          <a href="https://financial-control-panel.vercel.app" class="proj-link" target="_blank">View Project &rarr;</a>
         </div>
       </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-thumb p3">
-          <div class="thumb-text t3">MED</div>
-          <span class="proj-num">03</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-type">Web App &mdash; Django / PostgreSQL</div>
-          <h3>Hospital Records System</h3>
-          <p>Secure healthcare records management with role-based access control, a PostgreSQL relational schema, and a clean web dashboard for clinical staff.</p>
-          <div class="proj-stack">
-            <span class="ps">Django</span><span class="ps">PostgreSQL</span>
-            <span class="ps">Python</span><span class="ps">Bootstrap</span>
-          </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
-        </div>
-      </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-thumb p4">
-          <div class="thumb-text t4">ML</div>
-          <span class="proj-num">04</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-type">Machine Learning &mdash; Flask API</div>
-          <h3>Crop Disease Detector</h3>
-          <p>A TensorFlow model that classifies crop diseases from leaf images, served via a lightweight Flask API and integrated into a simple mobile-friendly web UI.</p>
-          <div class="proj-stack">
-            <span class="ps">Python</span><span class="ps">TensorFlow</span>
-            <span class="ps">Flask</span><span class="ps">OpenCV</span>
-          </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
-        </div>
-      </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-thumb p5">
-          <div class="thumb-text t5">NET</div>
-          <span class="proj-num">05</span>
-        </div>
+
+
+<div class="proj-card reveal">
+  <div class="proj-thumb p3">
+    <div class="thumb-text t3">NEWS</div>
+    <span class="proj-num">03</span>
+  </div>
+  <div class="proj-body">
+    <div class="proj-type">Web App &mdash; Digital News Aggregator</div>
+    <h3>News Aggregator Platform</h3>
+    <p>
+      A digital news aggregator that collects and displays articles from multiple sources 
+      in real-time. Built with Python backend services, MongoDB for fast content storage, 
+      PostgreSQL for structured data, and a React.js frontend for a responsive, interactive 
+      user experience.
+    </p>
+    <div class="proj-stack">
+      <span class="ps">Python</span>
+      <span class="ps">MongoDB</span>
+      <span class="ps">React.js</span>
+      <span class="ps">PostgreSQL</span>
+    </div>
+    <a href="#" class="proj-link">View Project &rarr;</a>
+  </div>
+</div>
+
+<div class="proj-card reveal">
+  <div class="proj-thumb p4">
+    <div class="thumb-text t4">BIZ</div>
+    <span class="proj-num">04</span>
+  </div>      
+
+
+
+
+      
+
+
+
+<div class="proj-body">
+  <div class="proj-type">Business Website &mdash; ISP Platform</div>
+  <h3>FRIC Internet Services</h3>
+  <p>
+  A business website developed for an internet service provider to showcase their
+  broadband services and technology solutions. The platform presents service plans,
+  company information, and contact options in a clean, responsive interface designed
+  to help customers easily explore connectivity and IT service offerings.
+  </p>
+  <div class="proj-stack">
+    <span class="ps">HTML</span>
+    <span class="ps">CSS</span>
+    <span class="ps">JavaScript</span>
+    <span class="ps">PHP</span>
+    <span class="ps">SQL</span>
+    <span class="ps">Apache</span>
+  </div>
+  <a href="https://fric.co.ke" class="proj-link" target="_blank">View Project &rarr;</a>
+</div>
+</div>
+
+<div class="proj-card reveal">
+  <div class="proj-thumb p5">
+    <div class="thumb-text t5">NET</div>
+    <span class="proj-num">05</span>
+  </div>
+
+
+
+
+
         <div class="proj-body">
           <div class="proj-type">Networking &amp; Security</div>
           <h3>Network Monitor Tool</h3>
@@ -838,25 +880,38 @@
         </div>
       </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-thumb p6">
-          <div class="thumb-text t6">EDU</div>
-          <span class="proj-num">06</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-type">Web App &mdash; SaaS / Supabase</div>
-          <h3>School Management Portal</h3>
-          <p>Comprehensive school administration platform covering student records, fee collection, exam grading, and staff management &mdash; powered by Supabase.</p>
-          <div class="proj-stack">
-            <span class="ps">Next.js</span><span class="ps">Supabase</span>
-            <span class="ps">TypeScript</span><span class="ps">Tailwind</span>
-          </div>
-          <a href="#" class="proj-link">View Project &rarr;</a>
-        </div>
-      </div>
 
-    </div>
+
+
+
+
+      <div class="proj-card reveal">
+  <div class="proj-thumb p6">
+    <div class="thumb-text t6">FIN</div>
+    <span class="proj-num">06</span>
   </div>
+  <div class="proj-body">
+    <div class="proj-type">Business Website &mdash; Financial Firm</div>
+    <h3>Financial Solutions Portal</h3>
+    <p>
+      A responsive website built for a financial services firm to showcase their 
+      products, services, and client resources. Features include interactive web forms, 
+      secure client inquiry submissions, and a backend dashboard for managing content 
+      and client requests.
+    </p>
+    <div class="proj-stack">
+      <span class="ps">HTML</span>
+      <span class="ps">CSS</span>
+      <span class="ps">JavaScript</span>
+      <span class="ps">WebForms</span>
+      <span class="ps">PHP</span>
+      <span class="ps">MySQL</span>
+    </div>
+    <a href="#" class="proj-link">View Project &rarr;</a>
+  </div>
+</div>
+
+    
 </section>
 
 <!-- ===== CONTACT ===== -->
@@ -865,7 +920,7 @@
     <div class="reveal"><div class="section-label">Contact</div></div>
     <h2 class="reveal">Let's build something<br><em>that matters</em></h2>
     <p class="reveal" style="font-size:0.79rem;color:var(--muted);line-height:1.85;margin-top:0.8rem;max-width:500px;">
-      Have a project, a collaboration idea, or just want to connect? Drop me a message and I'll get back to you.
+      Have a project, a collaboration idea, or just want to connect? Send me a message and I'll get back to you.
     </p>
 
     <div class="contact-grid reveal">
@@ -887,13 +942,7 @@
       </div>
     </div>
 
-    <!--
-      WEB3FORMS
-      1. Go to https://web3forms.com and create a free account.
-      2. Copy your Access Key.
-      3. Replace YOUR_ACCESS_KEY_HERE below with that key.
-      Form submissions will arrive directly in your email inbox.
-    -->
+  
     <form
       class="cform reveal"
       id="contactForm"
@@ -925,7 +974,7 @@
       </div>
       <div>
         <button class="fsub" type="submit" id="submitBtn">Send Message &rarr;</button>
-        <p class="form-note">Powered by Web3Forms &mdash; no spam, ever.</p>
+        <p class="form-note">Powered by Web3Forms</p>
       </div>
       <div class="form-msg" id="formMsg">Message sent. I will be in touch soon.</div>
     </form>
