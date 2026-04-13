@@ -28,6 +28,7 @@
     color: var(--text);
     overflow-x: hidden;
     cursor: none;
+    font-size: 16px;
   }
 
   body::after {
@@ -58,7 +59,7 @@
   .nav-logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--muted); text-decoration: none; transition: color 0.2s; position: relative;
   }
   .nav-links a::after { content:''; position:absolute; bottom:-3px;left:0; width:0;height:1px; background:var(--accent); transition:width 0.3s; }
@@ -135,7 +136,7 @@
   h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
 
   .hero-sub {
-    margin-top: 1.5rem; font-size: 0.79rem; line-height: 1.85;
+    margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.85;
     color: var(--muted); max-width: 440px;
     opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
   }
@@ -146,7 +147,7 @@
   .btn-fill {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.82rem 1.8rem; background: var(--accent); color: var(--bg);
-    font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
     letter-spacing: 0.1em; text-transform: uppercase;
     text-decoration: none; border: none; cursor: pointer;
     clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
@@ -156,7 +157,7 @@
   .btn-line {
     display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.82rem 1.8rem; border: 1px solid var(--border); color: var(--text);
-    font-family: 'DM Mono', monospace; font-size: 0.68rem;
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
     letter-spacing: 0.1em; text-transform: uppercase;
     text-decoration: none; transition: border-color 0.2s, color 0.2s;
   }
@@ -170,7 +171,7 @@
   .stat { background: var(--bg); padding: 1.1rem 1.2rem; text-align: center; }
   .stat-n { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); line-height: 1; }
   .stat-n b { color: var(--accent); font-weight: 700; }
-  .stat-l { font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+  .stat-l { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
 
   /* Hero photo */
   .hero-right {
@@ -270,7 +271,7 @@
   .d { width: 10px; height: 10px; border-radius: 50%; }
   .d1{background:#ff5f57;} .d2{background:#febc2e;} .d3{background:#28c840;}
   .t-name { font-size: 0.6rem; color: var(--muted); margin-left: auto; letter-spacing: 0.06em; }
-  .t-body { padding: 1.4rem 1.6rem; font-size: 0.69rem; line-height: 1.95; }
+  .t-body { padding: 1.4rem 1.6rem; font-size: 0.85rem; line-height: 1.95; }
   .tl { display:flex; gap:0.7rem; }
   .tp{color:var(--accent);user-select:none;}
   .tc{color:var(--text);}
@@ -282,12 +283,12 @@
   @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
   .meet-content h2 { margin-bottom: 1.3rem; }
-  .meet-content p { font-size: 0.78rem; line-height: 1.9; color: var(--muted); margin-bottom: 1rem; }
+  .meet-content p { font-size: 0.95rem; line-height: 1.9; color: var(--muted); margin-bottom: 1rem; }
   .meet-content p strong { color: var(--text); font-weight: 400; }
   .trait-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.4rem; }
   .ttag {
-    padding: 0.3rem 0.75rem; border: 1px solid var(--border);
-    font-size: 0.6rem; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;
+    padding: 0.35rem 0.85rem; border: 1px solid var(--border);
+    font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase;
     transition: border-color 0.2s, color 0.2s;
   }
   .ttag:hover { border-color: var(--accent); color: var(--accent); }
@@ -321,7 +322,7 @@
   }
   .sk-tags{display:flex;flex-wrap:wrap;gap:0.35rem;position:relative;}
   .sk-t {
-    font-size:0.59rem;letter-spacing:0.04em;padding:0.2rem 0.55rem;
+    font-size:0.66rem;letter-spacing:0.04em;padding:0.25rem 0.6rem;
     background:var(--surface);border:1px solid var(--border);color:var(--muted);
   }
 
@@ -352,19 +353,16 @@
     line-height:1; position:relative; z-index:1;
   }
 
-  .p1{background:#0c1620;} .t1{color:rgba(100,180,255,0.15);}
-  .p2{background:#160c20;} .t2{color:rgba(180,100,255,0.15);}
-  .p3{background:#0c201a;} .t3{color:rgba(100,255,180,0.15);}
-  .p4{background:#20160c;} .t4{color:rgba(255,200,100,0.15);}
-  .p5{background:#1a0c20;} .t5{color:rgba(200,100,255,0.15);}
-  .p6{background:#0c1e20;} .t6{color:rgba(100,220,255,0.15);}
+  /* Project cards - black background */
+  .p1,.p2,.p3,.p4,.p5,.p6{background:var(--bg);}
+  .t1,.t2,.t3,.t4,.t5,.t6{color:rgba(255,255,255,0.06);}
 
   .proj-body { padding: 1.3rem; flex:1; display:flex; flex-direction:column; }
   .proj-type { font-size:0.57rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.4rem; }
   .proj-card h3 { font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:0.5rem; }
-  .proj-card p { font-size:0.68rem;line-height:1.7;color:var(--muted);flex:1;margin-bottom:1rem; }
+  .proj-card p { font-size:0.82rem;line-height:1.7;color:var(--muted);flex:1;margin-bottom:1rem; }
   .proj-stack{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1rem;}
-  .ps{font-size:0.57rem;letter-spacing:0.04em;padding:0.18rem 0.45rem;background:var(--bg);border:1px solid var(--border);color:var(--muted);}
+  .ps{font-size:0.64rem;letter-spacing:0.04em;padding:0.22rem 0.5rem;background:var(--bg);border:1px solid var(--border);color:var(--muted);}
   .proj-link {
     font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
     color:var(--accent);text-decoration:none;
@@ -383,8 +381,8 @@
   }
   .cc{background:var(--bg);padding:1.4rem;transition:background 0.3s;}
   .cc:hover{background:var(--card);}
-  .cc-l{font-size:0.57rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
-  .cc a,.cc span{font-size:0.71rem;color:var(--text);text-decoration:none;transition:color 0.2s;word-break:break-all;}
+  .cc-l{font-size:0.66rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;}
+  .cc a,.cc span{font-size:0.82rem;color:var(--text);text-decoration:none;transition:color 0.2s;word-break:break-all;}
   .cc a:hover{color:var(--accent);}
 
   /* FORM */
@@ -949,7 +947,7 @@ the seller, while the admin can easily manage property listings through a MySQL-
       action="https://api.web3forms.com/submit"
       method="POST"
     >
-      <input type="hidden" name="access_key" value="a5810772-193b-4634-acec-05f18cb9d04c">
+      <input type="hidden" name="access_key" id="access_key">
       <input type="hidden" name="subject" value="Portfolio Contact — Nicholus Mutugi">
       <input type="hidden" name="from_name" value="Portfolio Website">
       <input type="checkbox" name="botcheck" style="display:none">
@@ -987,9 +985,13 @@ the seller, while the admin can easily manage property listings through a MySQL-
   <div>Meru, Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
 </footer>
 
+<script src="config.js"></script>
 <script>
   // Auto year
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Set access key from config
+  document.getElementById('access_key').value = CONFIG.WEB3FORMS_ACCESS_KEY;
 
   // Cursor
   const cur = document.getElementById('cursor');
