@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Nicholus Mutugi | Software Development Services</title>
+<meta name="description" content="Professional software development services — mobile apps, web platforms, backend systems, and technical consulting.">
+<meta name="author" content="Nicholus Mutugi">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Services — Nicholus Mutugi">
+<meta property="og:description" content="Full-stack development services for businesses and entrepreneurs.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  .services-intro {
+    padding: 4rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .services-intro p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+  .services-container {
+    padding: 4rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.4s;
+  }
+  .service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+  }
+  .service-card:hover::before {
+    height: 100%;
+  }
+  .service-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-family: var(--font-syne);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .service-card .subtitle {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+  }
+  .service-card p {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  .service-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+  .service-card ul li {
+    font-size: 0.8rem;
+    color: var(--text);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .service-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .service-card .price {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+  .process-section {
+    padding: 5rem 2.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .process-step {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .process-step .step-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(200,240,96,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .process-step h4 {
+    font-family: var(--font-syne);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .process-step p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .faq-section {
+    padding: 5rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .faq-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+  }
+  .faq-item h4 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .faq-item p {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .cta-section {
+    padding: 5rem 2.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    background: var(--surface);
+  }
+  .cta-section h2 {
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 1024px) {
+    .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .services-intro, .services-container, .process-section, .faq-section, .cta-section {
+      padding: 3rem 1.5rem;
+    }
+    .process-steps {
+      grid-template-columns: 1fr;
+    }
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">NM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="services.html" style="color: var(--accent);">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <button id="themeToggle" class="theme-toggle">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </li>
+  </ul>
+  <button class="hamburger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cv.html">CV</a>
+  <a href="projects.html">Projects</a>
+  <a href="skills.html">Skills</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Services</span>
+  </div>
+  <h1>Services</h1>
+  <p>Full-stack development solutions tailored to your needs</p>
+</div>
+
+<!-- SERVICES INTRO -->
+<div class="services-intro">
+  <p>
+    I partner with businesses, startups, and entrepreneurs to build
+    high-quality software solutions that drive growth and solve real problems.
+  </p>
+</div>
+
+<!-- SERVICES CONTAINER -->
+<div class="services-container">
+
+  <!-- Mobile App Development -->
+  <div class="service-card reveal">
+    <div class="icon">📱</div>
+    <h3>Mobile App Development</h3>
+    <div class="subtitle">iOS & Android — Cross-Platform</div>
+    <p>
+      Native-quality mobile applications built with React Native or Flutter.
+      From concept to App Store deployment, I handle the entire development lifecycle.
+    </p>
+    <ul>
+      <li>Cross-platform development (iOS & Android)</li>
+      <li>Custom UI/UX implementation</li>
+      <li>API integration and real-time sync</li>
+      <li>Push notifications and offline support</li>
+      <li>App Store & Google Play deployment</li>
+      <li>Post-launch maintenance and updates</li>
+    </ul>
+    <div class="price">Starting at $2,500</div>
+  </div>
+
+  <!-- Web Application Development -->
+  <div class="service-card reveal">
+    <div class="icon">🌐</div>
+    <h3>Web Application Development</h3>
+    <div class="subtitle">Full-Stack Web Solutions</div>
+    <p>
+      Modern, responsive web applications built with React, Next.js, or vanilla JavaScript.
+      Scalable backends powered by Node.js, Python, or PHP.
+    </p>
+    <ul>
+      <li>Custom web application development</li>
+      <li>Responsive, mobile-first design</li>
+      <li>RESTful API design and integration</li>
+      <li>Database architecture and optimization</li>
+      <li>Authentication and authorization</li>
+      <li>Performance optimization and SEO</li>
+    </ul>
+    <div class="price">Starting at $1,500</div>
+  </div>
+
+  <!-- Business Websites -->
+  <div class="service-card reveal">
+    <div class="icon">💼</div>
+    <h3>Business Websites</h3>
+    <div class="subtitle">Professional Online Presence</div>
+    <p>
+      Clean, professional websites that represent your brand and engage visitors.
+      Includes content management capabilities for easy updates.
+    </p>
+    <ul>
+      <li>Corporate and portfolio websites</li>
+      <li>E-commerce and online stores</li>
+      <li>Landing pages and microsites</li>
+      <li>Content management integration</li>
+      <li>Contact forms and lead capture</li>
+      <li>Basic SEO and analytics setup</li>
+    </ul>
+    <div class="price">Starting at $800</div>
+  </div>
+
+  <!-- Backend & API Development -->
+  <div class="service-card reveal">
+    <div class="icon">⚙️</div>
+    <h3>Backend & API Development</h3>
+    <div class="subtitle">Scalable Server-Side Solutions</div>
+    <p>
+      Robust backend systems and APIs that power your applications.
+      Secure, scalable, and well-documented code.
+    </p>
+    <ul>
+      <li>RESTful and GraphQL API development</li>
+      <li>Database design and optimization</li>
+      <li>User authentication systems</li>
+      <li>Third-party integrations</li>
+      <li>File storage and management</li>
+      <li>Real-time features (WebSockets)</li>
+    </ul>
+    <div class="price">Starting at $1,200</div>
+  </div>
+
+  <!-- Database Design -->
+  <div class="service-card reveal">
+    <div class="icon">🗄️</div>
+    <h3>Database Design & Optimization</h3>
+    <div class="subtitle">SQL & NoSQL Solutions</div>
+    <p>
+      Efficient database architecture for your application's data needs.
+      From schema design to query optimization.
+    </p>
+    <ul>
+      <li>Relational database design (MySQL, PostgreSQL)</li>
+      <li>NoSQL solutions (MongoDB, Redis)</li>
+      <li>Schema design and normalization</li>
+      <li>Query optimization and indexing</li>
+      <li>Data migration and backup strategies</li>
+      <li>BaaS integration (Firebase, Supabase)</li>
+    </ul>
+    <div class="price">Starting at $800</div>
+  </div>
+
+  <!-- Technical Consulting -->
+  <div class="service-card reveal">
+    <div class="icon">💡</div>
+    <h3>Technical Consulting</h3>
+    <div class="subtitle">Expert Guidance & Code Review</div>
+    <p>
+      Strategic advice on technology choices, architecture decisions,
+      and code quality improvements.
+    </p>
+    <ul>
+      <li>Technology stack selection</li>
+      <li>Architecture review and planning</li>
+      <li>Code review and quality assessment</li>
+      <li>Performance auditing</li>
+      <li>Security best practices</li>
+      <li>Development workflow optimization</li>
+    </ul>
+    <div class="price">$75/hour</div>
+  </div>
+
+</div>
+
+<!-- PROCESS SECTION -->
+<div class="process-section">
+  <div class="container" style="max-width: 1200px;">
+    <div class="section-label">Process</div>
+    <h2>How I <em>work</em></h2>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h4>Discovery</h4>
+        <p>Understanding your goals, requirements, and constraints. We discuss the problem you're solving and define success metrics.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <h4>Planning</h4>
+        <p>Creating a detailed project plan with timelines, milestones, and deliverables. Technology stack selection and architecture design.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <h4>Development</h4>
+        <p>Building your solution with regular updates and check-ins. Agile methodology with iterative improvements based on feedback.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <h4>Delivery</h4>
+        <p>Deployment, testing, and handover. Documentation, training, and ongoing support options available.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="faq-section">
+  <div class="container" style="max-width: 1200px;">
+    <div class="section-label">FAQ</div>
+    <h2>Common <em>questions</em></h2>
+
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <h4>What's your typical project timeline?</h4>
+        <p>
+          Simple websites take 1-2 weeks, web applications 3-6 weeks, and mobile apps 4-8 weeks depending on complexity.
+          I'll provide a detailed timeline during the planning phase.
+        </p>
+      </div>
+
+      <div class="faq-item reveal">
+        <h4>Do you provide ongoing maintenance?</h4>
+        <p>
+          Yes! I offer maintenance packages for updates, bug fixes, and feature additions.
+          Monthly retainers are available for clients who need ongoing support.
+        </p>
+      </div>
+
+      <div class="faq-item reveal">
+        <h4>What payment methods do you accept?</h4>
+        <p>
+          I accept bank transfers, M-Pesa, and other mobile payment options.
+          Payment terms are typically 50% upfront, 50% on delivery for most projects.
+        </p>
+      </div>
+
+      <div class="faq-item reveal">
+        <h4>Will I own the source code?</h4>
+        <p>
+          Absolutely. Upon final payment, you receive full ownership of all source code,
+          databases, and related assets created for your project.
+        </p>
+      </div>
+
+      <div class="faq-item reveal">
+        <h4>Do you work with international clients?</h4>
+        <p>
+          Yes, I work with clients worldwide. Communication is handled via email, video calls,
+          and project management tools. Time zone differences are accommodated.
+        </p>
+      </div>
+
+      <div class="faq-item reveal">
+        <h4>What if I need changes after delivery?</h4>
+        <p>
+          I include a revision period after delivery for minor adjustments.
+          Larger changes or new features can be handled through a maintenance agreement.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA SECTION -->
+<div class="cta-section">
+  <h2>Ready to start your <em>project</em>?</h2>
+  <p>Let's discuss your ideas and turn them into reality.</p>
+  <a href="contact.html" class="btn-fill">Get In Touch →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
+  <div>Meru, Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop">
+  <span>↑</span>
+</button>
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/utils.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

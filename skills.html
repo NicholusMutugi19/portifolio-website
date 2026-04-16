@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Nicholus Mutugi | Technical Expertise</title>
+<meta name="description" content="Technical skills and expertise of Nicholus Mutugi — mobile development, web technologies, databases, and more.">
+<meta name="author" content="Nicholus Mutugi">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Skills — Nicholus Mutugi">
+<meta property="og:description" content="Comprehensive technical skills across mobile, web, and backend development.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  .skills-intro {
+    padding: 4rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .skills-intro p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+  .skills-container {
+    padding: 4rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .skill-category {
+    margin-bottom: 4rem;
+  }
+  .skill-category:last-child {
+    margin-bottom: 0;
+  }
+  .skill-category h3 {
+    font-family: var(--font-syne);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .skill-category h3::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .skill-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .skill-item:hover {
+    border-color: var(--accent);
+    transform: translateX(5px);
+  }
+  .skill-item h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .skill-item p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .skill-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.65rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .proficiency-section {
+    padding: 4rem 2.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .proficiency-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+  }
+  .proficiency-item h4 {
+    font-family: var(--font-syne);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .prof-bar-bg {
+    height: 6px;
+    background: var(--bg);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .prof-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), rgba(200,240,96,0.6));
+    border-radius: 3px;
+    transition: width 1s ease-out;
+  }
+  .prof-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .tools-section {
+    padding: 4rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .tool-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .tool-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .tool-name {
+    font-size: 0.72rem;
+    color: var(--text);
+  }
+  .learning-section {
+    padding: 4rem 2.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .learning-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .learning-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .learning-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .learning-content h4 {
+    font-size: 0.85rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+  .learning-content p {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .skills-intro, .skills-container, .proficiency-section, .tools-section, .learning-section {
+      padding: 3rem 1.5rem;
+    }
+    .skill-grid {
+      grid-template-columns: 1fr;
+    }
+    .proficiency-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">NM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html" style="color: var(--accent);">Skills</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <button id="themeToggle" class="theme-toggle">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </li>
+  </ul>
+  <button class="hamburger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cv.html">CV</a>
+  <a href="projects.html">Projects</a>
+  <a href="skills.html">Skills</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>Skills</span>
+  </div>
+  <h1>Technical Skills</h1>
+  <p>Comprehensive expertise across the full development stack</p>
+</div>
+
+<!-- SKILLS INTRO -->
+<div class="skills-intro">
+  <p>
+    With 3+ years of hands-on experience, I've developed a versatile skill set
+    spanning mobile applications, web platforms, backend systems, and database architecture.
+  </p>
+</div>
+
+<!-- SKILLS CONTAINER -->
+<div class="skills-container">
+
+  <!-- Mobile Development -->
+  <div class="skill-category">
+    <h3>Mobile Development</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>React Native</h4>
+        <p>Cross-platform mobile apps with native performance, hot reload, and extensive ecosystem support.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">React Native CLI</span>
+          <span class="skill-tag">Expo</span>
+          <span class="skill-tag">Redux</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>Flutter</h4>
+        <p>Beautiful, natively compiled applications using Dart with a single codebase for iOS and Android.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Dart</span>
+          <span class="skill-tag">Widgets</span>
+          <span class="skill-tag">State Management</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>Progressive Web Apps</h4>
+        <p>Web applications with app-like experience, offline support, and push notifications.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Service Workers</span>
+          <span class="skill-tag">Web App Manifest</span>
+          <span class="skill-tag">IndexedDB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Web Development -->
+  <div class="skill-category">
+    <h3>Web Development</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>Frontend</h4>
+        <p>Modern, responsive user interfaces with clean code and optimal user experience.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5/CSS3</span>
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>Backend</h4>
+        <p>Robust server-side applications with scalable architecture and secure APIs.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">GraphQL</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>Full-Stack</h4>
+        <p>End-to-end development from database to UI with cohesive architecture.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MERN Stack</span>
+          <span class="skill-tag">JAMstack</span>
+          <span class="skill-tag">Serverless</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Databases -->
+  <div class="skill-category">
+    <h3>Databases & Data</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>Relational Databases</h4>
+        <p>Structured data storage with complex queries, transactions, and referential integrity.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">SQLite</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>NoSQL Databases</h4>
+        <p>Flexible schema design for unstructured data and high-scale applications.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">Document Stores</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>BaaS Platforms</h4>
+        <p>Backend-as-a-Service for rapid development with built-in authentication and real-time sync.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Prisma ORM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cloud & DevOps -->
+  <div class="skill-category">
+    <h3>Cloud & DevOps</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>Cloud Platforms</h4>
+        <p>Deployment and hosting on modern cloud infrastructure with auto-scaling and monitoring.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Supabase</span>
+          <span class="skill-tag">Vercel</span>
+          <span class="skill-tag">AWS Basics</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>DevOps Tools</h4>
+        <p>CI/CD pipelines, containerization, and automated deployment workflows.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Git/GitHub</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security & Networking -->
+  <div class="skill-category">
+    <h3>Security & Networking</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>Network Fundamentals</h4>
+        <p>Understanding of TCP/IP, DNS, HTTP/HTTPS, and network architecture.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">TCP/IP</span>
+          <span class="skill-tag">HTTP/HTTPS</span>
+          <span class="skill-tag">DNS</span>
+          <span class="skill-tag">Firewalls</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>Security Practices</h4>
+        <p>Application security, OWASP guidelines, and secure coding practices.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">OWASP Top 10</span>
+          <span class="skill-tag">Authentication</span>
+          <span class="skill-tag">Encryption</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Machine Learning -->
+  <div class="skill-category">
+    <h3>Machine Learning</h3>
+    <div class="skill-grid">
+      <div class="skill-item reveal">
+        <h4>Data Science</h4>
+        <p>Data analysis, preprocessing, and visualization with Python libraries.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Matplotlib</span>
+        </div>
+      </div>
+      <div class="skill-item reveal">
+        <h4>ML Frameworks</h4>
+        <p>Building and deploying machine learning models for practical applications.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Scikit-Learn</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Model Integration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROFICIENCY SECTION -->
+<div class="proficiency-section">
+  <div class="container" style="max-width: 1200px;">
+    <div class="section-label">Proficiency</div>
+    <h2>Skill <em>levels</em></h2>
+
+    <div class="proficiency-grid">
+      <div class="proficiency-item reveal">
+        <h4>JavaScript / TypeScript</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 90%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Advanced</span>
+          <span>90%</span>
+        </div>
+      </div>
+
+      <div class="proficiency-item reveal">
+        <h4>React / React Native</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 85%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Advanced</span>
+          <span>85%</span>
+        </div>
+      </div>
+
+      <div class="proficiency-item reveal">
+        <h4>Node.js / Python</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 80%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Advanced</span>
+          <span>80%</span>
+        </div>
+      </div>
+
+      <div class="proficiency-item reveal">
+        <h4>SQL / Databases</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 85%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Advanced</span>
+          <span>85%</span>
+        </div>
+      </div>
+
+      <div class="proficiency-item reveal">
+        <h4>PHP</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 75%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Intermediate</span>
+          <span>75%</span>
+        </div>
+      </div>
+
+      <div class="proficiency-item reveal">
+        <h4>DevOps / Cloud</h4>
+        <div class="prof-bar-bg">
+          <div class="prof-bar-fill" style="width: 70%;"></div>
+        </div>
+        <div class="prof-label">
+          <span>Intermediate</span>
+          <span>70%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS SECTION -->
+<div class="tools-section">
+  <div class="container" style="max-width: 1200px;">
+    <div class="section-label">Tools</div>
+    <h2>Tools I work <em>with</em></h2>
+
+    <div class="tools-grid">
+      <div class="tool-card reveal"><span class="tool-icon">📝</span><span class="tool-name">VS Code</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🔧</span><span class="tool-name">Git</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🐙</span><span class="tool-name">GitHub</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🐳</span><span class="tool-name">Docker</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🎨</span><span class="tool-name">Figma</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">📮</span><span class="tool-name">Postman</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🗄️</span><span class="tool-name">MySQL Workbench</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">📊</span><span class="tool-name">MongoDB Compass</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🔌</span><span class="tool-name">Insomnia</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">📋</span><span class="tool-name">Jira</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">💬</span><span class="tool-name">Slack</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">📱</span><span class="tool-name">Android Studio</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🍎</span><span class="tool-name">Xcode</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">⚡</span><span class="tool-name">Vite</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">📦</span><span class="tool-name">npm/yarn</span></div>
+      <div class="tool-card reveal"><span class="tool-icon">🖥️</span><span class="tool-name">Terminal</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARNING SECTION -->
+<div class="learning-section">
+  <div class="container" style="max-width: 1200px;">
+    <div class="section-label">Growth</div>
+    <h2>Currently <em>learning</em></h2>
+
+    <div class="learning-list">
+      <div class="learning-item reveal">
+        <div class="learning-icon">🤖</div>
+        <div class="learning-content">
+          <h4>Advanced Machine Learning</h4>
+          <p>Deepening understanding of neural networks and practical ML model deployment.</p>
+        </div>
+      </div>
+      <div class="learning-item reveal">
+        <div class="learning-icon">☁️</div>
+        <div class="learning-content">
+          <h4>AWS Services</h4>
+          <p>Expanding cloud expertise with EC2, Lambda, S3, and RDS for enterprise deployments.</p>
+        </div>
+      </div>
+      <div class="learning-item reveal">
+        <div class="learning-icon">⚛️</div>
+        <div class="learning-content">
+          <h4>Next.js 14+</h4>
+          <p>Mastering App Router, Server Components, and advanced React patterns.</p>
+        </div>
+      </div>
+      <div class="learning-item reveal">
+        <div class="learning-icon">🔐</div>
+        <div class="learning-content">
+          <h4>Advanced Security</h4>
+          <p>Deep dive into application security, penetration testing, and secure architecture.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
+  <div>Meru, Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop">
+  <span>↑</span>
+</button>
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/utils.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

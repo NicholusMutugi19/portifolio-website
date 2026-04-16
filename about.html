@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Nicholus Mutugi | Software Engineer</title>
+<meta name="description" content="Learn more about Nicholus Mutugi — a software engineer from Meru, Kenya building mobile apps, web platforms, and backend systems.">
+<meta name="author" content="Nicholus Mutugi">
+
+<!-- Open Graph -->
+<meta property="og:title" content="About — Nicholus Mutugi">
+<meta property="og:description" content="Engineer by craft, builder by instinct.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  .about-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4rem 0;
+  }
+  .about-photo {
+    position: relative;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .about-photo::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid rgba(200,240,96,0.25);
+    pointer-events: none;
+  }
+  .about-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+  }
+  .about-content p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .story-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .story-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+  }
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.4s;
+  }
+  .story-card:hover::before {
+    height: 100%;
+  }
+  .story-card .number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(200,240,96,0.08);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .story-card h3 {
+    font-family: var(--font-syne);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+  .story-card p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .values-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .value-card {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+  .value-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .value-content h3 {
+    font-family: var(--font-syne);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .value-content p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .timeline-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .journey-timeline {
+    position: relative;
+    margin-top: 3rem;
+  }
+  .journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+  }
+  .journey-item {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+  }
+  .journey-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0.4rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .journey-item:last-child {
+    padding-bottom: 0;
+  }
+  .journey-item .year {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  .journey-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .journey-item p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .interests-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .interest-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text);
+  }
+  .interest-pill span {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 900px) {
+    .about-hero {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .about-photo {
+      order: -1;
+    }
+    .about-photo img {
+      height: 350px;
+    }
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">NM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" style="color: var(--accent);">About</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <button id="themeToggle" class="theme-toggle">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </li>
+  </ul>
+  <button class="hamburger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cv.html">CV</a>
+  <a href="projects.html">Projects</a>
+  <a href="skills.html">Skills</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span>About</span>
+  </div>
+  <h1>About Me</h1>
+  <p>Engineer by craft, builder by instinct</p>
+</div>
+
+<!-- ABOUT HERO -->
+<div class="container">
+  <div class="about-hero">
+    <div class="about-photo">
+      <img src="./IMG-20251030-WA0074.jpg" alt="Nicholus Mutugi" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%23141412%22 width=%22400%22 height=%22500%22/%3E%3Ctext fill=%22%23626258%22 font-family=%22Fraunces%22 font-size=%2280%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3ENM%3C/text%3E%3C/svg%3E'">
+    </div>
+    <div class="about-content">
+      <h2>Hi, I'm <span style="color: var(--accent);">Nicholus Mutugi</span></h2>
+      <p>
+        A software engineer from Meru, Kenya, passionate about building technology that makes a difference.
+        I specialize in full-stack development, creating everything from mobile applications to complex backend systems.
+      </p>
+      <p>
+        My journey in tech started with curiosity about how things work — taking apart old electronics,
+        writing my first lines of code, and never stopping the pursuit of knowledge. Today, I work across
+        the entire stack: React Native for mobile, modern JavaScript frameworks for web, Python and Node.js
+        for backends, and SQL/NoSQL databases for data persistence.
+      </p>
+      <p>
+        When I'm not coding, you'll find me exploring machine learning concepts, contributing to open-source
+        projects, or sharing knowledge with aspiring developers in my community.
+      </p>
+      <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+        <a href="contact.html" class="btn-fill">Get In Touch →</a>
+        <a href="cv.html" class="btn-line">View My CV</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY SECTION -->
+<div class="story-section">
+  <div class="container">
+    <div class="section-label">My Journey</div>
+    <h2>From curiosity to <em>craftsmanship</em></h2>
+
+    <div class="story-grid">
+      <div class="story-card reveal">
+        <div class="number">01</div>
+        <h3>The Beginning</h3>
+        <p>
+          It all started with an old desktop computer and endless curiosity. I spent countless hours
+          figuring out how software works, eventually writing my first "Hello World" and feeling the
+          magic of creating something from nothing.
+        </p>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="number">02</div>
+        <h3>First Projects</h3>
+        <p>
+          Built my first mobile app with React Native, launched my first website, and landed my first
+          client. Each project taught me something new — about code, about problem-solving, and about
+          understanding user needs.
+        </p>
+      </div>
+
+      <div class="story-card reveal">
+        <div class="number">03</div>
+        <h3>Today</h3>
+        <p>
+          Now I work with clients worldwide, building scalable solutions that solve real problems.
+          From property portals to financial apps, each project is an opportunity to create something meaningful.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE SECTION -->
+<div class="timeline-section">
+  <div class="container">
+    <div class="section-label">Timeline</div>
+    <h2>My <em>journey</em> so far</h2>
+
+    <div class="journey-timeline">
+      <div class="journey-item reveal">
+        <span class="year">2021 — Present</span>
+        <h3>University & Professional Growth</h3>
+        <p>
+          Pursuing a Bachelor of Science in Computer Science at Meru University while simultaneously
+          building real-world projects. Balancing academic theory with practical application has given
+          me a unique perspective on software engineering.
+        </p>
+      </div>
+
+      <div class="journey-item reveal">
+        <span class="year">2022 — 2023</span>
+        <h3>FRIC Internet Services</h3>
+        <p>
+          Worked as a full-stack developer building the company website, customer portals, and internal
+          tools. Gained hands-on experience with PHP, MySQL, Linux server administration, and network monitoring.
+        </p>
+      </div>
+
+      <div class="journey-item reveal">
+        <span class="year">2021 — 2022</span>
+        <h3>First Client Projects</h3>
+        <p>
+          Started freelancing with small websites and mobile apps. Built a news aggregator, budget tracker,
+          and various business websites. Each project expanded my skill set and professional network.
+        </p>
+      </div>
+
+      <div class="journey-item reveal">
+        <span class="year">2020</span>
+        <h3>Self-Taught Foundations</h3>
+        <p>
+          During high school, dedicated free time to learning programming fundamentals. Completed online
+          courses in Python, JavaScript, and web development. Built first portfolio website.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUES SECTION -->
+<div class="values-section">
+  <div class="container">
+    <div class="section-label">Values</div>
+    <h2>What I <em>believe in</em></h2>
+
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon">💡</div>
+        <div class="value-content">
+          <h3>Continuous Learning</h3>
+          <p>Technology evolves rapidly. I dedicate time daily to learning new tools, patterns, and best practices.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-icon">🎯</div>
+        <div class="value-content">
+          <h3>Problem First</h3>
+          <p>Great code solves real problems. I focus on understanding the problem deeply before writing a single line.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-icon">🤝</div>
+        <div class="value-content">
+          <h3>Clear Communication</h3>
+          <p>Technical excellence means nothing without clear communication. I keep clients informed and involved.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-icon">✨</div>
+        <div class="value-content">
+          <h3>Quality Craftsmanship</h3>
+          <p>I take pride in clean, maintainable code. Every project reflects my commitment to excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTERESTS SECTION -->
+<div class="interests-section">
+  <div class="container">
+    <div class="section-label">Beyond Code</div>
+    <h2>Interests & <em>hobbies</em></h2>
+
+    <div class="interests-grid">
+      <div class="interest-pill">📚 Reading Tech Books</div>
+      <div class="interest-pill">🏃 Running</div>
+      <div class="interest-pill">🎵 Music Production</div>
+      <div class="interest-pill">🌱 Open Source</div>
+      <div class="interest-pill">📝 Tech Blogging</div>
+      <div class="interest-pill">🎮 Gaming</div>
+      <div class="interest-pill">☕ Coffee</div>
+      <div class="interest-pill">🌍 Travel</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
+  <div>Meru, Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop">
+  <span>↑</span>
+</button>
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/utils.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
