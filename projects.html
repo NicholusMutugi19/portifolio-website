@@ -229,7 +229,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -446,12 +446,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

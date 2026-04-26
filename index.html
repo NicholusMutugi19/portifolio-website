@@ -23,6 +23,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -87,6 +90,11 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     display: block;
+    color: var(--accent);
+  }
+  .quick-link .icon svg {
+    width: 48px;
+    height: 48px;
   }
   .quick-link h3 {
     font-family: var(--font-syne);
@@ -127,7 +135,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle" style="margin-left: 1rem;">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -224,37 +232,37 @@
 
     <div class="quick-links">
       <a href="about.html" class="quick-link reveal">
-        <span class="icon">👋</span>
+        <span class="icon"><i data-lucide="user"></i></span>
         <h3>About Me</h3>
         <p>Learn about my journey, values, and what drives me as a developer.</p>
       </a>
 
       <a href="projects.html" class="quick-link reveal">
-        <span class="icon">💼</span>
+        <span class="icon"><i data-lucide="briefcase"></i></span>
         <h3>Projects</h3>
         <p>Explore my portfolio of mobile apps, web platforms, and business websites.</p>
       </a>
 
       <a href="skills.html" class="quick-link reveal">
-        <span class="icon">🛠️</span>
+        <span class="icon"><i data-lucide="wrench"></i></span>
         <h3>Skills</h3>
         <p>See my technical expertise across mobile, web, databases, and more.</p>
       </a>
 
       <a href="services.html" class="quick-link reveal">
-        <span class="icon">⚙️</span>
+        <span class="icon"><i data-lucide="settings"></i></span>
         <h3>Services</h3>
         <p>Professional development services tailored to your project needs.</p>
       </a>
 
       <a href="cv.html" class="quick-link reveal">
-        <span class="icon">📄</span>
+        <span class="icon"><i data-lucide="file-text"></i></span>
         <h3>CV / Resume</h3>
         <p>View my complete professional history and download my CV.</p>
       </a>
 
       <a href="contact.html" class="quick-link reveal">
-        <span class="icon">📬</span>
+        <span class="icon"><i data-lucide="mail"></i></span>
         <h3>Contact</h3>
         <p>Get in touch for projects, collaborations, or just to say hello.</p>
       </a>
@@ -286,7 +294,13 @@
       </div>
       <div class="cc">
         <div class="cc-l">Location</div>
-        <span>🇰🇪 Kenya</span>
+        <span style="display: flex; align-items: center; gap: 0.4rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Kenya
+        </span>
       </div>
     </div>
 
@@ -326,12 +340,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

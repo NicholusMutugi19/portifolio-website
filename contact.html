@@ -63,8 +63,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
     flex-shrink: 0;
+    color: var(--accent);
+  }
+  .contact-icon svg {
+    width: 20px;
+    height: 20px;
   }
   .contact-text span {
     display: block;
@@ -96,9 +100,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
     text-decoration: none;
     transition: all 0.2s;
+    color: var(--text);
+  }
+  .social-link svg {
+    width: 20px;
+    height: 20px;
   }
   .social-link:hover {
     border-color: var(--accent);
@@ -293,7 +301,7 @@
     <li><a href="contact.html" style="color: var(--accent);">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -338,7 +346,9 @@
 
       <div class="contact-details">
         <div class="contact-item">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon">
+            <i data-lucide="mail"></i>
+          </div>
           <div class="contact-text">
             <span>Email</span>
             <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
@@ -346,7 +356,9 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">📱</div>
+          <div class="contact-icon">
+            <i data-lucide="phone"></i>
+          </div>
           <div class="contact-text">
             <span>Phone (Kenya)</span>
             <a href="tel:+254795905012">+254 795 905 012</a>
@@ -354,7 +366,9 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon">
+            <i data-lucide="smartphone"></i>
+          </div>
           <div class="contact-text">
             <span>Alt. Phone</span>
             <a href="tel:+254793549484">+254 793 549 484</a>
@@ -362,10 +376,12 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
           <div class="contact-text">
             <span>Location</span>
-            <p>🇰🇪 Kenya</p>
+            <p>Kenya</p>
           </div>
         </div>
       </div>
@@ -373,26 +389,22 @@
       <!-- Social Links -->
       <div class="social-links">
         <a href="https://github.com/NicholusMutugi19" class="social-link" target="_blank" title="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
+          <i data-lucide="github"></i>
         </a>
-        <a href="#" class="social-link" title="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
+        <a href="https://linkedin.com/in/nicholus-mutugi" class="social-link" target="_blank" title="LinkedIn">
+          <i data-lucide="linkedin"></i>
         </a>
-        <a href="#" class="social-link" title="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-          </svg>
+        <a href="https://facebook.com/NicDevOfficial" class="social-link" target="_blank" title="Facebook">
+          <i data-lucide="facebook"></i>
+        </a>
+        <a href="https://instagram.com/nic_d3v" class="social-link" target="_blank" title="Instagram">
+          <i data-lucide="instagram"></i>
+        </a>
+        <a href="https://twitter.com/nic_d3v" class="social-link" target="_blank" title="Twitter/X">
+          <i data-lucide="twitter"></i>
         </a>
         <a href="https://wa.me/254795905012" class="social-link" target="_blank" title="WhatsApp">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-          </svg>
+          <i data-lucide="message-circle"></i>
         </a>
       </div>
 
@@ -492,12 +504,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

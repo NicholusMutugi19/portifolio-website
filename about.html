@@ -15,6 +15,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -34,6 +37,7 @@
     height: 500px;
     object-fit: cover;
     filter: grayscale(15%) contrast(1.05);
+    border-radius: 8px;
   }
   .about-photo::before {
     content: '';
@@ -44,6 +48,7 @@
     bottom: -20px;
     border: 1px solid rgba(200,240,96,0.25);
     pointer-events: none;
+    border-radius: 8px;
   }
   .about-content h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
@@ -70,6 +75,12 @@
     border: 1px solid var(--border);
     padding: 2rem;
     position: relative;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .story-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
   }
   .story-card::before {
     content: '';
@@ -122,6 +133,12 @@
     padding: 1.5rem;
     background: var(--bg);
     border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .value-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
   }
   .value-icon {
     width: 48px;
@@ -131,8 +148,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
     flex-shrink: 0;
+    border-radius: 8px;
+    color: var(--accent);
+  }
+  .value-icon svg {
+    width: 24px;
+    height: 24px;
   }
   .value-content h3 {
     font-family: var(--font-syne);
@@ -195,6 +217,7 @@
     padding: 0.25rem 0.6rem;
     background: var(--card);
     border: 1px solid var(--border);
+    border-radius: 4px;
   }
   .journey-item h3 {
     font-family: var(--font-display);
@@ -228,14 +251,31 @@
     border: 1px solid var(--border);
     font-size: 0.8rem;
     color: var(--text);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
   }
-  .interest-pill span {
-    font-size: 1.4rem;
+  .interest-pill:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
   }
+  .interest-pill svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Enhanced Responsive Breakpoints */
+  @media (max-width: 1200px) {
+    .about-hero {
+      gap: 3rem;
+    }
+  }
+
   @media (max-width: 900px) {
     .about-hero {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 2.5rem;
     }
     .about-photo {
       order: -1;
@@ -248,6 +288,58 @@
     }
     .values-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 2rem 0;
+      gap: 2rem;
+    }
+    .about-photo img {
+      height: 280px;
+    }
+    .about-photo::before {
+      top: 12px;
+      left: 12px;
+      right: -12px;
+      bottom: -12px;
+    }
+    .about-content h2 {
+      font-size: 1.6rem;
+    }
+    .about-content p {
+      font-size: 0.9rem;
+    }
+    .story-section,
+    .values-section,
+    .timeline-section,
+    .interests-section {
+      padding: 3rem 0;
+    }
+    .story-card,
+    .value-card {
+      padding: 1.5rem;
+    }
+    .journey-item {
+      padding-left: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-photo img {
+      height: 240px;
+    }
+    .about-content h2 {
+      font-size: 1.4rem;
+    }
+    .interests-grid {
+      grid-template-columns: 1fr;
+    }
+    .interest-pill {
+      padding: 0.9rem 1rem;
+      font-size: 0.75rem;
     }
   }
 </style>
@@ -270,7 +362,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -340,30 +432,31 @@
     <div class="story-grid">
       <div class="story-card reveal">
         <div class="number">01</div>
-        <h3>Cybersecurity First</h3>
+        <h3>Software Development</h3>
         <p>
-          My tech journey began with cybersecurity — exploring Linux, network protocols, and security
-          fundamentals. Understanding how systems can be compromised taught me how to build them securely
-          from the start.
+          My journey began with software development, driven by curiosity about how things work.
+          Despite having a low-performance laptop that struggled with every build, I persisted —
+          writing code, breaking things, and learning from each failure.
         </p>
       </div>
 
       <div class="story-card reveal">
         <div class="number">02</div>
-        <h3>Development Evolution</h3>
+        <h3>Networking & Databases</h3>
         <p>
-          Transitioned into software development, building mobile apps with React Native and full-stack
-          web applications. Each project expanded my skills — from budget trackers to news aggregators
-          and business platforms.
+          To understand how applications communicate, I dove into networking — learning TCP/IP,
+          DNS, and HTTP. Simultaneously, I explored databases to master data storage, retrieval,
+          and structure — from MySQL to MongoDB.
         </p>
       </div>
 
       <div class="story-card reveal">
         <div class="number">03</div>
-        <h3>Security + Development</h3>
+        <h3>Cybersecurity</h3>
         <p>
-          Today, I combine both worlds — building secure, scalable software with security baked in.
-          From property portals to financial apps, I deliver solutions that are both functional and secure.
+          With a solid foundation in building and connecting systems, I moved into cybersecurity
+          to protect what I create. Today, I build secure, scalable software with security
+          principles baked in from day one.
         </p>
       </div>
     </div>
@@ -388,31 +481,43 @@
       </div>
 
       <div class="journey-item reveal">
-        <span class="year">2022 — 2023</span>
-        <h3>FRIC Internet Services</h3>
+        <span class="year">2023 — Present</span>
+        <h3>Freelance Development</h3>
         <p>
-          Worked as a full-stack developer building the company website, customer portals, and internal
-          tools. Gained hands-on experience with PHP, MySQL, Linux server administration, and network monitoring.
+          Started taking on client projects while at university. Built a property listing portal,
+          a progressive web app for financial tracking, and business websites. Working with PHP, MySQL,
+          React, TypeScript, and modern full-stack technologies.
         </p>
       </div>
 
       <div class="journey-item reveal">
-        <span class="year">2021 — 2022</span>
-        <h3>Development Focus</h3>
+        <span class="year">2021 — 2023</span>
+        <h3>Networking & Databases</h3>
         <p>
-          dove into software development building mobile apps and web platforms. Completed client projects
-          including a news aggregator, budget tracker, and business websites. Mastered React Native, Firebase,
-          and modern full-stack development practices.
+          Expanded my skillset to understand how applications communicate and store data.
+          Learned TCP/IP, DNS, HTTP protocols, and worked with MySQL, PostgreSQL, and MongoDB
+          to build robust data layer architectures.
         </p>
       </div>
 
       <div class="journey-item reveal">
-        <span class="year">2020</span>
-        <h3>Cybersecurity Beginnings</h3>
+        <span class="year">2020 — 2022</span>
+        <h3>Software Development Foundation</h3>
         <p>
-          My tech journey started with cybersecurity — exploring network fundamentals, Linux systems,
-          and security concepts. This foundation in security shaped my approach to building secure,
-          resilient software systems from the ground up.
+          My tech journey began with software development, driven by curiosity about how things work.
+          Despite having a low-performance laptop that struggled with every build, I persisted —
+          writing my first lines of code, experimenting with different languages, and learning
+          through trial and error. This period was about pure curiosity and skill building.
+        </p>
+      </div>
+
+      <div class="journey-item reveal">
+        <span class="year">2023 — Present</span>
+        <h3>Cybersecurity Integration</h3>
+        <p>
+          With a solid foundation in building systems, I moved into cybersecurity to protect what I create.
+          Exploring Linux, network security, and application security principles. Today, I combine
+          development expertise with security-first thinking to build resilient software.
         </p>
       </div>
     </div>
@@ -427,7 +532,7 @@
 
     <div class="values-grid">
       <div class="value-card reveal">
-        <div class="value-icon">💡</div>
+        <div class="value-icon"><i data-lucide="book-open"></i></div>
         <div class="value-content">
           <h3>Continuous Learning</h3>
           <p>Technology evolves rapidly. I dedicate time daily to learning new tools, patterns, and best practices.</p>
@@ -435,7 +540,7 @@
       </div>
 
       <div class="value-card reveal">
-        <div class="value-icon">🎯</div>
+        <div class="value-icon"><i data-lucide="target"></i></div>
         <div class="value-content">
           <h3>Problem First</h3>
           <p>Great code solves real problems. I focus on understanding the problem deeply before writing a single line.</p>
@@ -443,7 +548,7 @@
       </div>
 
       <div class="value-card reveal">
-        <div class="value-icon">🤝</div>
+        <div class="value-icon"><i data-lucide="message-circle"></i></div>
         <div class="value-content">
           <h3>Clear Communication</h3>
           <p>Technical excellence means nothing without clear communication. I keep clients informed and involved.</p>
@@ -451,7 +556,7 @@
       </div>
 
       <div class="value-card reveal">
-        <div class="value-icon">✨</div>
+        <div class="value-icon"><i data-lucide="award"></i></div>
         <div class="value-content">
           <h3>Quality Craftsmanship</h3>
           <p>I take pride in clean, maintainable code. Every project reflects my commitment to excellence.</p>
@@ -468,14 +573,14 @@
     <h2>Interests & <em>hobbies</em></h2>
 
     <div class="interests-grid">
-      <div class="interest-pill">📚 Reading Tech Books</div>
-      <div class="interest-pill">🏃 Running</div>
-      <div class="interest-pill">🎵 Music Production</div>
-      <div class="interest-pill">🌱 Open Source</div>
-      <div class="interest-pill">📝 Tech Blogging</div>
-      <div class="interest-pill">🎮 Gaming</div>
-      <div class="interest-pill">☕ Coffee</div>
-      <div class="interest-pill">🌍 Travel</div>
+      <div class="interest-pill"><i data-lucide="bike"></i> Cycling</div>
+      <div class="interest-pill"><i data-lucide="book-open"></i> Reading Tech Books</div>
+      <div class="interest-pill"><i data-lucide="code-2"></i> Open Source</div>
+      <div class="interest-pill"><i data-lucide="headphones"></i> Music Production</div>
+      <div class="interest-pill"><i data-lucide="pen-tool"></i> Tech Blogging</div>
+      <div class="interest-pill"><i data-lucide="coffee"></i> Coffee</div>
+      <div class="interest-pill"><i data-lucide="globe"></i> Travel</div>
+      <div class="interest-pill"><i data-lucide="gamepad-2"></i> Gaming</div>
     </div>
   </div>
 </div>
@@ -483,12 +588,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

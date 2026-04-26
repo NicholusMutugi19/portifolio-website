@@ -15,6 +15,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -149,8 +152,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
     flex-shrink: 0;
+    border-radius: 8px;
+    color: var(--accent);
+  }
+  .cert-icon svg {
+    width: 20px;
+    height: 20px;
   }
   .cert-info h5 {
     font-size: 0.82rem;
@@ -229,7 +237,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -325,38 +333,14 @@
       </div>
 
       <div class="timeline-item">
-        <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white);">Full-Stack Developer</h4>
+        <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white);">Foundation & Learning</h4>
         <div class="meta" style="font-size: 0.75rem; color: var(--muted); margin: 0.4rem 0;">
-          <span>FRIC Internet Services</span> | <span>2022 — 2023</span>
+          <span>Self-Directed</span> | <span>2020 — 2022</span>
         </div>
         <p style="font-size: 0.85rem; line-height: 1.8; color: var(--muted);">
-          Developed and maintained the company website and internal systems. Built customer-facing portals for
-          broadband service management, implemented automated billing notifications, and created network monitoring
-          tools for the technical team. Worked with PHP, MySQL, JavaScript, and Linux server administration.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white);">Software Developer</h4>
-        <div class="meta" style="font-size: 0.75rem; color: var(--muted); margin: 0.4rem 0;">
-          <span>Self-Employed</span> | <span>2021 — 2022</span>
-        </div>
-        <p style="font-size: 0.85rem; line-height: 1.8; color: var(--muted);">
-          Focused on software development building mobile apps and web platforms. Completed client projects
-          including a news aggregator, budget tracker, and business websites. Mastered React Native, Firebase,
-          and modern full-stack development practices.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white);">Cybersecurity Foundation</h4>
-        <div class="meta" style="font-size: 0.75rem; color: var(--muted); margin: 0.4rem 0;">
-          <span>Self-Directed Learning</span> | <span>2020</span>
-        </div>
-        <p style="font-size: 0.85rem; line-height: 1.8; color: var(--muted);">
-          Started tech journey with cybersecurity — exploring network fundamentals, Linux systems,
-          and security concepts. This foundation shaped my approach to building secure, resilient
-          software systems from the ground up.
+          Started with cybersecurity fundamentals — exploring Linux, network protocols, and security concepts.
+          During high school, I focused on building my foundation through self-directed learning and experimentation.
+          This period was about skill-building and curiosity, not client work.
         </p>
       </div>
     </div>
@@ -436,42 +420,42 @@
 
     <div class="certifications-list">
       <div class="cert-item">
-        <div class="cert-icon">📱</div>
+        <div class="cert-icon"><i data-lucide="smartphone"></i></div>
         <div class="cert-info">
           <h5>Mobile App Development</h5>
-          <p>Online Certification • 2022</p>
+          <p>Online Certification • 2023</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">🌐</div>
+        <div class="cert-icon"><i data-lucide="globe"></i></div>
         <div class="cert-info">
           <h5>Full-Stack Web Development</h5>
-          <p>Online Certification • 2022</p>
+          <p>Online Certification • 2023</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">🗄️</div>
+        <div class="cert-icon"><i data-lucide="database"></i></div>
         <div class="cert-info">
           <h5>Database Design & SQL</h5>
           <p>Online Certification • 2023</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">🔒</div>
+        <div class="cert-icon"><i data-lucide="shield"></i></div>
         <div class="cert-info">
           <h5>Cybersecurity Fundamentals</h5>
           <p>Online Certification • 2023</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">🤖</div>
+        <div class="cert-icon"><i data-lucide="brain"></i></div>
         <div class="cert-info">
           <h5>Machine Learning Basics</h5>
           <p>Self-Directed Study • Ongoing</p>
         </div>
       </div>
       <div class="cert-item">
-        <div class="cert-icon">☁️</div>
+        <div class="cert-icon"><i data-lucide="cloud"></i></div>
         <div class="cert-info">
           <h5>Cloud Deployment (Firebase/Supabase)</h5>
           <p>Hands-on Experience • 2023</p>
@@ -526,12 +510,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

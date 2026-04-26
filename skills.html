@@ -15,6 +15,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -171,6 +174,11 @@
   .tool-icon {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .tool-icon svg {
+    width: 40px;
+    height: 40px;
   }
   .tool-name {
     font-size: 0.72rem;
@@ -202,8 +210,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
     flex-shrink: 0;
+    border-radius: 8px;
+    color: var(--accent);
+  }
+  .learning-icon svg {
+    width: 22px;
+    height: 22px;
   }
   .learning-content h4 {
     font-size: 0.85rem;
@@ -246,7 +259,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -560,22 +573,22 @@
     <h2>Tools I work <em>with</em></h2>
 
     <div class="tools-grid">
-      <div class="tool-card reveal"><span class="tool-icon">📝</span><span class="tool-name">VS Code</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🔧</span><span class="tool-name">Git</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🐙</span><span class="tool-name">GitHub</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🐳</span><span class="tool-name">Docker</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🎨</span><span class="tool-name">Figma</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">📮</span><span class="tool-name">Postman</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🗄️</span><span class="tool-name">MySQL Workbench</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">📊</span><span class="tool-name">MongoDB Compass</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🔌</span><span class="tool-name">Insomnia</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">📋</span><span class="tool-name">Jira</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">💬</span><span class="tool-name">Slack</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">📱</span><span class="tool-name">Android Studio</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🍎</span><span class="tool-name">Xcode</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">⚡</span><span class="tool-name">Vite</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">📦</span><span class="tool-name">npm/yarn</span></div>
-      <div class="tool-card reveal"><span class="tool-icon">🖥️</span><span class="tool-name">Terminal</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="file-code-2"></i></span><span class="tool-name">VS Code</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="git-branch"></i></span><span class="tool-name">Git</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="github"></i></span><span class="tool-name">GitHub</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="container"></i></span><span class="tool-name">Docker</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="figma"></i></span><span class="tool-name">Figma</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="send"></i></span><span class="tool-name">Postman</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="database"></i></span><span class="tool-name">MySQL Workbench</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="circle-help"></i></span><span class="tool-name">MongoDB Compass</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="plug"></i></span><span class="tool-name">Insomnia</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="clipboard-list"></i></span><span class="tool-name">Jira</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="message-square"></i></span><span class="tool-name">Slack</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="smartphone"></i></span><span class="tool-name">Android Studio</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="laptop"></i></span><span class="tool-name">Xcode</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="zap"></i></span><span class="tool-name">Vite</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="package"></i></span><span class="tool-name">npm/yarn</span></div>
+      <div class="tool-card reveal"><span class="tool-icon"><i data-lucide="terminal"></i></span><span class="tool-name">Terminal</span></div>
     </div>
   </div>
 </div>
@@ -588,28 +601,28 @@
 
     <div class="learning-list">
       <div class="learning-item reveal">
-        <div class="learning-icon">🤖</div>
+        <div class="learning-icon"><i data-lucide="brain"></i></div>
         <div class="learning-content">
           <h4>Advanced Machine Learning</h4>
           <p>Deepening understanding of neural networks and practical ML model deployment.</p>
         </div>
       </div>
       <div class="learning-item reveal">
-        <div class="learning-icon">☁️</div>
+        <div class="learning-icon"><i data-lucide="cloud"></i></div>
         <div class="learning-content">
           <h4>AWS Services</h4>
           <p>Expanding cloud expertise with EC2, Lambda, S3, and RDS for enterprise deployments.</p>
         </div>
       </div>
       <div class="learning-item reveal">
-        <div class="learning-icon">⚛️</div>
+        <div class="learning-icon"><i data-lucide="layers"></i></div>
         <div class="learning-content">
           <h4>Next.js 14+</h4>
           <p>Mastering App Router, Server Components, and advanced React patterns.</p>
         </div>
       </div>
       <div class="learning-item reveal">
-        <div class="learning-icon">🔐</div>
+        <div class="learning-icon"><i data-lucide="shield-check"></i></div>
         <div class="learning-content">
           <h4>Advanced Security</h4>
           <p>Deep dive into application security, penetration testing, and secure architecture.</p>
@@ -622,12 +635,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

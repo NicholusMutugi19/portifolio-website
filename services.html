@@ -15,6 +15,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <!-- Styles -->
 <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -64,6 +67,11 @@
   .service-card .icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--accent);
+  }
+  .service-card .icon svg {
+    width: 48px;
+    height: 48px;
   }
   .service-card h3 {
     font-family: var(--font-syne);
@@ -231,7 +239,7 @@
     <li><a href="contact.html">Contact</a></li>
     <li>
       <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">☀️</span>
+        <i data-lucide="sun" id="themeIcon"></i>
       </button>
     </li>
   </ul>
@@ -275,7 +283,7 @@
 
   <!-- Mobile App Development -->
   <div class="service-card reveal">
-    <div class="icon">📱</div>
+    <div class="icon"><i data-lucide="smartphone"></i></div>
     <h3>Mobile App Development</h3>
     <div class="subtitle">iOS & Android — Cross-Platform</div>
     <p>
@@ -295,7 +303,7 @@
 
   <!-- Web Application Development -->
   <div class="service-card reveal">
-    <div class="icon">🌐</div>
+    <div class="icon"><i data-lucide="globe"></i></div>
     <h3>Web Application Development</h3>
     <div class="subtitle">Full-Stack Web Solutions</div>
     <p>
@@ -315,7 +323,7 @@
 
   <!-- Business Websites -->
   <div class="service-card reveal">
-    <div class="icon">💼</div>
+    <div class="icon"><i data-lucide="briefcase"></i></div>
     <h3>Business Websites</h3>
     <div class="subtitle">Professional Online Presence</div>
     <p>
@@ -335,7 +343,7 @@
 
   <!-- Backend & API Development -->
   <div class="service-card reveal">
-    <div class="icon">⚙️</div>
+    <div class="icon"><i data-lucide="server"></i></div>
     <h3>Backend & API Development</h3>
     <div class="subtitle">Scalable Server-Side Solutions</div>
     <p>
@@ -355,7 +363,7 @@
 
   <!-- Database Design -->
   <div class="service-card reveal">
-    <div class="icon">🗄️</div>
+    <div class="icon"><i data-lucide="database"></i></div>
     <h3>Database Design & Optimization</h3>
     <div class="subtitle">SQL & NoSQL Solutions</div>
     <p>
@@ -375,7 +383,7 @@
 
   <!-- Technical Consulting -->
   <div class="service-card reveal">
-    <div class="icon">💡</div>
+    <div class="icon"><i data-lucide="lightbulb"></i></div>
     <h3>Technical Consulting</h3>
     <div class="subtitle">Expert Guidance & Code Review</div>
     <p>
@@ -497,12 +505,18 @@
 <!-- FOOTER -->
 <footer>
   <div>&copy; <span id="yr"></span> <b>Nicholus Mutugi</b>. All rights reserved.</div>
-  <div>🇰🇪 Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a></div>
+  <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Kenya &nbsp;&mdash;&nbsp; <a href="mailto:nicholusmutugi19@gmail.com">nicholusmutugi19@gmail.com</a>
+  </div>
 </footer>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop">
-  <span>↑</span>
+  <i data-lucide="arrow-up" style="width: 18px; height: 18px; color: var(--accent);"></i>
 </button>
 
 <!-- Scripts -->

@@ -803,3 +803,34 @@ footer b{color:var(--accent);font-weight:400;}
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-3 { margin-bottom: 3rem; }
+
+/* =====================================================
+   ICON UTILITIES
+   ===================================================== */
+.contact-icon svg,
+.value-icon svg,
+.learning-icon svg,
+.tool-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+}
+
+.btn-fill svg,
+.btn-line svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
+}

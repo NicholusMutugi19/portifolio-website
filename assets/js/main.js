@@ -212,7 +212,16 @@ const ThemeToggle = {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     if (this.icon) {
-      this.icon.textContent = theme === 'light' ? '🌙' : '☀️';
+      // Update Lucide icon based on theme
+      if (theme === 'light') {
+        this.icon.setAttribute('data-lucide', 'moon');
+      } else {
+        this.icon.setAttribute('data-lucide', 'sun');
+      }
+      // Re-initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
     }
   }
 };
