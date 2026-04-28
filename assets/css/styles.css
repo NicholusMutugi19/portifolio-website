@@ -186,7 +186,7 @@ h1 .Nicholus{
 h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
 
 .hero-sub {
-  margin-top: 1.5rem; font-size: 1.15rem; line-height: 1.8;
+  margin-top: 1.5rem; font-size: 1.2rem; line-height: 1.8;
   color: var(--text); max-width: 440px;
   opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
 }
@@ -621,6 +621,7 @@ footer b{color:var(--accent);font-weight:400;}
 /* =====================================================
    SERVICES PAGE
    ===================================================== */
+.services-intro p { font-size: 1.2rem; }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
