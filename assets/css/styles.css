@@ -675,7 +675,8 @@ footer b{color:var(--accent);font-weight:400;}
 .service-card ul li::before {
   content: '→';
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   color: var(--accent);
 }
 
