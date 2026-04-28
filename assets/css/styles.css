@@ -631,7 +631,7 @@ footer b{color:var(--accent);font-weight:400;}
 .service-card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 1.5rem;
+  padding: 1rem;
   transition: all 0.3s;
 }
 .service-card:hover {
