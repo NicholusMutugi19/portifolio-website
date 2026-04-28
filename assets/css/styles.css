@@ -754,6 +754,7 @@ footer b{color:var(--accent);font-weight:400;}
   .meet-grid{grid-template-columns:1fr;gap:2.5rem;}
   .skills-grid{grid-template-columns:1fr 1fr;}
   .proj-grid{grid-template-columns:1fr;}
+  .service-card { padding: 0.8rem; }
   .frow{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr 1fr;}
   footer{flex-direction:column;text-align:center;}
@@ -793,6 +794,7 @@ footer b{color:var(--accent);font-weight:400;}
   .tools-grid{grid-template-columns:repeat(2,1fr);}
   .journey-timeline{padding-left:1.5rem;}
   .journey-item{padding-left:2rem;}
+  .service-card { padding: 0.6rem; }
   .cv-container{padding:1.5rem 1rem;}
   .contact-form-wrap{padding:1.5rem;}
 }
