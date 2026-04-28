@@ -625,13 +625,13 @@ footer b{color:var(--accent);font-weight:400;}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 3rem;
 }
 .service-card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 2rem;
+  padding: 1.5rem;
   transition: all 0.3s;
 }
 .service-card:hover {
