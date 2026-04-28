@@ -631,7 +631,7 @@ footer b{color:var(--accent);font-weight:400;}
 .service-card {
   background: var(--card);
   border: 1px solid var(--border);
-  padding: 0.8rem;
+  padding: 0.7rem;
   transition: all 0.3s;
   text-align: center;
 }
@@ -675,8 +675,7 @@ footer b{color:var(--accent);font-weight:400;}
 .service-card ul li::before {
   content: '→';
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   color: var(--accent);
 }
 
